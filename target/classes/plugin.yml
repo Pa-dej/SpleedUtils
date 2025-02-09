@@ -1,0 +1,13 @@
+name: spleefutil
+version: '1.0-SNAPSHOT'
+main: me.padej.spleefutil.SpleefUtil
+api-version: '1.20'
+author: 'Playstrix_community'
+
+commands:
+  spleefutil:
+    description: Spleef Utility Command
+    usage: /<command> <subcommand>
+    aliases: [sutil]
+    permissions:
+      - spleefutils.event
