@@ -1,6 +1,5 @@
 package me.padej.spleefutil;
 
-import me.padej.spleefutil.modules.LowGravity;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
@@ -9,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import static me.padej.spleefutil.SpleefUtil.enableAllFeatures;
 import static me.padej.spleefutil.modules.Anonim.*;
 import static me.padej.spleefutil.modules.DestroySnowballsOnHit.destroySnowOnHitEnabled;
 import static me.padej.spleefutil.modules.DropSnowballs.dropSnowballsEnabled;
-import static me.padej.spleefutil.modules.EnderPearl.enderPearlEnabled;
+import static me.padej.spleefutil.modules.Pearl.enderPearlEnabled;
 import static me.padej.spleefutil.modules.FeatherDash.dashEnabled;
 import static me.padej.spleefutil.modules.LowGravity.*;
 import static me.padej.spleefutil.modules.PowderSnowTrap.powderSnowTrapEnabled;
@@ -27,7 +27,7 @@ import static me.padej.spleefutil.modules.RegenBlocks.blocksRegen;
 
 public class onCommand implements CommandExecutor, TabCompleter {
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
         List<String> completions = new ArrayList<>();
 
         if (args.length == 1) {

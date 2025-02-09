@@ -9,10 +9,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-
 import static me.padej.spleefutil.SpleefUtil.random;
 
 public class RandomEffect implements Listener {
@@ -35,9 +31,9 @@ public class RandomEffect implements Listener {
     private void applyRandomEffect(Player player) {
         PotionEffectType[] effects = {
                 PotionEffectType.SPEED,
-                PotionEffectType.JUMP,
+                PotionEffectType.JUMP_BOOST,
                 PotionEffectType.SLOW_FALLING,
-                PotionEffectType.SLOW
+                PotionEffectType.SLOWNESS
         };
 
         PotionEffectType randomEffect = effects[random.nextInt(effects.length)];

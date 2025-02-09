@@ -1,13 +1,8 @@
 package me.padej.spleefutil.modules;
 
 import me.padej.spleefutil.SpleefUtil;
-import net.md_5.bungee.api.ChatColor;
-import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.BlockDisplay;
-import org.bukkit.entity.Display;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,15 +11,8 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.BlockVector;
-import org.bukkit.util.Transformation;
-import org.joml.AxisAngle4f;
-import org.joml.Matrix4f;
-import org.joml.Quaternionf;
-import org.joml.Vector3f;
 
 import java.util.*;
-
-import static net.md_5.bungee.api.ChatColor.*;
 
 public class RegenBlocks implements Listener {
 

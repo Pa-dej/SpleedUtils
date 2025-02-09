@@ -18,7 +18,7 @@ public class LowGravity {
 
             if (playerLocation.distance(center) <= 70) { // Проверяем, находится ли игрок в радиусе 200 блоков
                 PotionEffect invisible = new PotionEffect(PotionEffectType.SLOW_FALLING, 900 * 20, 0, false, false);
-                PotionEffect glowing = new PotionEffect(PotionEffectType.JUMP, 900 * 20, 2, false, false);
+                PotionEffect glowing = new PotionEffect(PotionEffectType.JUMP_BOOST, 900 * 20, 2, false, false);
 
                 player.addPotionEffect(invisible);
                 player.addPotionEffect(glowing);
@@ -32,7 +32,7 @@ public class LowGravity {
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (Anonim.anonymousEffects.containsKey(player)) {
                 player.removePotionEffect(PotionEffectType.SLOW_FALLING);
-                player.removePotionEffect(PotionEffectType.JUMP);
+                player.removePotionEffect(PotionEffectType.JUMP_BOOST);
 
                 Anonim.anonymousEffects.remove(player);
             }

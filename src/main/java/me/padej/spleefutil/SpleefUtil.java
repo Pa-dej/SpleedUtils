@@ -1,9 +1,8 @@
 package me.padej.spleefutil;
 
+import me.padej.displayAPI.render.shapes.Highlight;
 import me.padej.spleefutil.modules.*;
-import me.padej.spleefutil.modules.EnderPearl;
-import org.bukkit.*;
-import org.bukkit.block.Block;
+import me.padej.spleefutil.modules.Pearl;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -18,10 +17,10 @@ public final class SpleefUtil extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getCommand("spleefutil").setExecutor(new onCommand());
+        Objects.requireNonNull(getCommand("spleefutil")).setExecutor(new onCommand());
         getServer().getPluginManager().registerEvents(new DestroySnowballsOnHit(), this);
         getServer().getPluginManager().registerEvents(new DropSnowballs(), this);
-        getServer().getPluginManager().registerEvents(new EnderPearl(), this);
+        getServer().getPluginManager().registerEvents(new Pearl(), this);
         getServer().getPluginManager().registerEvents(new FeatherDash(), this);
         getServer().getPluginManager().registerEvents(new PowderSnowTrap(), this);
         getServer().getPluginManager().registerEvents(new RandomEffect(), this);
@@ -35,13 +34,18 @@ public final class SpleefUtil extends JavaPlugin implements Listener {
         brokenBlocks.clear();
         regenTasks.values().forEach(BukkitRunnable::cancel);
         regenTasks.clear();
+        Highlight.removeAllSelections();
+    }
+
+    public static JavaPlugin getInstance() {
+        return JavaPlugin.getPlugin(SpleefUtil.class);
     }
 
     public static void disableAllFeatures() {
         Anonim.anonymousEnabled = false;
         DestroySnowballsOnHit.destroySnowOnHitEnabled = false;
         DropSnowballs.dropSnowballsEnabled = false;
-        EnderPearl.enderPearlEnabled = false;
+        Pearl.enderPearlEnabled = false;
         FeatherDash.dashEnabled = false;
         LowGravity.lowGravity = false;
         PowderSnowTrap.powderSnowTrapEnabled = false;
@@ -52,7 +56,7 @@ public final class SpleefUtil extends JavaPlugin implements Listener {
         DropSnowballs.dropSnowballsEnabled = true;
         DestroySnowballsOnHit.destroySnowOnHitEnabled = true;
         RandomEffect.randomEffectEnabled = true;
-        EnderPearl.enderPearlEnabled = true;
+        Pearl.enderPearlEnabled = true;
         PowderSnowTrap.powderSnowTrapEnabled = true;
         FeatherDash.dashEnabled = true;
     }
