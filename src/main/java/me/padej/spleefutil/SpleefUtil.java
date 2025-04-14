@@ -1,6 +1,5 @@
 package me.padej.spleefutil;
 
-import me.padej.displayAPI.render.shapes.Highlight;
 import me.padej.spleefutil.modules.*;
 import me.padej.spleefutil.modules.Pearl;
 import org.bukkit.event.Listener;
@@ -34,7 +33,6 @@ public final class SpleefUtil extends JavaPlugin implements Listener {
         brokenBlocks.clear();
         regenTasks.values().forEach(BukkitRunnable::cancel);
         regenTasks.clear();
-        Highlight.removeAllSelections();
     }
 
     public static JavaPlugin getInstance() {
